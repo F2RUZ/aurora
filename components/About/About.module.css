@@ -1,0 +1,329 @@
+/* ── SECTION ── */
+.section {
+  background: #EBEBEB;
+  padding: 80px 0 100px;
+}
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+/* ── HEADER ── */
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 52px;
+  text-align: left;
+  letter-spacing: -0.02em;
+}
+
+/* ── INTRO ── */
+.intro {
+  max-width: 640px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.logo {
+  max-width: 360px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 24px;
+}
+
+.desc {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #444;
+  margin: 0;
+}
+
+/* ── DESKTOP TIMELINE ── */
+.timeline {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 96px;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+/* ── MOBILE STATS GRID: скрыт на десктопе ── */
+.statsGrid { display: none; }
+
+/* ── CONTACT ── */
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 64px;
+  border-top: 1.5px solid #D0D0D0;
+  padding-top: 60px;
+}
+
+.contactLeft h3 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #111;
+  line-height: 1.3;
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+}
+
+.contactLeft p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.65;
+  margin: 0 0 28px;
+}
+
+.socials { display: flex; gap: 12px; }
+
+.dot {
+  width: 44px;
+  height: 44px;
+  background: #D4D4D4;
+  border-radius: 50%;
+  display: block;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dot:hover { background: #BEBEBE; }
+
+/* ── FORM ── */
+.contactCenter {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 6px;
+}
+
+/* Обёртка поля + ошибка */
+.fieldWrap {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4px;
+}
+
+.input {
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid #C0C0C0;
+  padding: 14px 0;
+  font-size: 15px;
+  color: #111;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+.input::placeholder { color: #AAA; }
+
+.input:focus { border-bottom-color: #111; }
+
+/* Красная линия при ошибке */
+.inputError {
+  border-bottom-color: #E53E3E !important;
+}
+
+/* Текст ошибки */
+.errorMsg {
+  font-size: 12px;
+  color: #E53E3E;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.btn {
+  margin-top: 18px;
+  background: #FFC211;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 32px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s, transform 0.2s;
+  align-self: flex-start;
+}
+
+.btn:hover {
+  background: #FFD44D;
+  transform: translateY(-2px);
+}
+
+/* ── CONTACT RIGHT ── */
+.contactRight {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-top: 6px;
+}
+
+.contactRight h4 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.contactRight p {
+  font-size: 13px;
+  color: #999;
+  margin: 0;
+}
+
+/* ── TABLET ── */
+@media (max-width: 1024px) {
+  .contact {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .contactRight {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    gap: 48px;
+  }
+}
+
+/* ══════════════════════════════════════════
+   МОБАЙЛ ≤ 768px
+══════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  .section { padding: 48px 0 60px; }
+
+  .container { padding: 0 20px; }
+
+  .title {
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .intro { margin-bottom: 28px; }
+
+  .logo {
+    max-width: 200px;
+    margin-bottom: 16px;
+  }
+
+  .desc {
+    font-size: 13px;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .timeline { display: none; }
+
+  .statsGrid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 0 -20px 40px;
+    width: auto;
+    align-items: flex-start;
+  }
+
+  .statsColLeft {
+    width: 56%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .statsColRight {
+    width: 41%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: -32px;
+  }
+
+  .statCard {
+    background: #D2D2D2;
+    border-radius: 0 18px 18px 0;
+    padding: 22px 18px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .statCardAlt {
+    background: #C4C4C4;
+    border-radius: 18px 0 0 18px;
+    padding: 22px 20px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .statNum {
+    font-size: 52px;
+    font-weight: 900;
+    color: #72BFB0;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .statCardAlt .statNum { font-size: 52px; }
+
+  .statLabel {
+    font-size: 11px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.4;
+  }
+
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-top: 36px;
+    border-top-width: 1px;
+  }
+
+  .contactLeft h3 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .contactLeft p {
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .socials { justify-content: center; }
+
+  .contactRight {
+    grid-column: auto;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .contactRight h4 { font-size: 16px; }
+
+  .btn {
+    align-self: stretch;
+    text-align: center;
+    padding: 16px;
+  }
+
+  .input {
+    font-size: 14px;
+    padding: 12px 0;
+  }
+}

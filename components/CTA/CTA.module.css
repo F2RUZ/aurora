@@ -1,0 +1,131 @@
+.cta {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.inner {
+  background: var(--color-dark);
+  border-radius: var(--radius-xl);
+  padding: 64px 72px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.inner::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 300px;
+  height: 300px;
+  background: var(--color-yellow);
+  border-radius: 50%;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.iconWrapper {
+  margin-bottom: 20px;
+  font-size: 40px;
+  line-height: 1;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 800;
+  color: white;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  max-width: 500px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 500;
+  max-width: 440px;
+  line-height: 1.6;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 320px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.input {
+  background: rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: white;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.input::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+.input:focus {
+  border-color: var(--color-yellow);
+}
+
+.btnSubmit {
+  background: var(--color-yellow);
+  color: var(--color-dark);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 16px 24px;
+  border-radius: 100px;
+  transition: all var(--transition);
+  box-shadow: 0 4px 20px rgba(245, 197, 24, 0.3);
+}
+
+.btnSubmit:hover {
+  background: var(--color-yellow-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(245, 197, 24, 0.4);
+}
+
+.privacy {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  text-align: center;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    padding: 48px 36px;
+  }
+  .form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .inner {
+    padding: 36px 24px;
+    border-radius: var(--radius-lg);
+  }
+}

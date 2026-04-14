@@ -1,0 +1,169 @@
+.header {
+  position: fixed;          /* ← всегда сверху */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  /* Лёгкое стекло — чтобы контент под хедером не сливался */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 0 40px;
+  max-width: 100%;
+}
+
+.menuBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.menuBtn:hover { opacity: 0.6; }
+
+.contactLink {
+  font-size: 16px;
+  font-weight: 500;
+  color: #111111;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contactLink:hover { color: #FFC211; }
+
+/* ── OVERLAY ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 199;
+  pointer-events: none;
+  transition: background 0.35s ease;
+}
+
+.overlayVisible {
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: all;
+}
+
+/* ── DRAWER ── */
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100dvh;
+  background: #ffffff;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 28px 40px;
+  box-sizing: border-box;
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 40px rgba(0, 0, 0, 0.12);
+}
+
+.drawerOpen {
+  transform: translateX(0);
+}
+
+.closeBtn {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.2s;
+  margin-bottom: 8px;
+}
+
+.closeBtn:hover { background: #f0f0f0; }
+
+.drawerLogo {
+  margin-bottom: 40px;
+}
+
+.drawerLogo img {
+  width: 130px;
+  height: auto;
+}
+
+.navList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.drawer.drawerOpen .navItem {
+  animation: slideIn 0.35s ease forwards;
+  opacity: 0;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.navLink {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 14px 16px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background 0.2s, color 0.2s;
+  font-family: inherit;
+  letter-spacing: -0.02em;
+}
+
+.navLink:hover {
+  background: #FFF8E0;
+  color: #FFC211;
+}
+
+.drawerFooter {
+  border-top: 1px solid #EEEEEE;
+  padding-top: 24px;
+  margin-top: 16px;
+}
+
+.drawerFooter p {
+  font-size: 14px;
+  color: #888;
+  margin: 0 0 6px;
+  line-height: 1.5;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 480px) {
+  .inner {
+    padding: 0 20px;
+    height: 64px;
+  }
+  .drawer {
+    width: 280px;
+  }
+}

@@ -1,0 +1,308 @@
+.hero {
+  position: relative;
+  padding: 160px 0 40px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.decorTopLeft {
+  position: absolute;
+  top: 10%;
+  left: 3%;
+  width: 220px;
+  z-index: 1;
+  animation: float 6s ease-in-out infinite;
+}
+.decorTopLeft img { width: 100%; height: auto; }
+
+.decorTopRight {
+  position: absolute;
+  top: 8%;
+  right: 5%;
+  width: 300px;
+  z-index: 1;
+  animation: float 7s ease-in-out infinite 0.5s;
+}
+.decorTopRight img { width: 100%; height: auto; }
+
+.decorBottomLeft {
+  position: absolute;
+  bottom: 15%;
+  left: 5%;
+  width: 320px;
+  z-index: 1;
+  animation: float 8s ease-in-out infinite 1s;
+}
+.decorBottomLeft img { width: 100%; height: auto; }
+
+.decorBottomRight {
+  position: absolute;
+  bottom: 25%;
+  right: 15%;
+  width: 160px;
+  z-index: 1;
+  animation: float 5s ease-in-out infinite 1.5s;
+  transform: rotate(-10deg);
+}
+.decorBottomRight img { width: 100%; height: auto; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-16px); }
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.lionWrap {
+  position: absolute;
+  top: -270px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: 550px;
+}
+.lionImg { width: 100%; height: auto; display: block; }
+
+.logoRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  margin-top: 120px;
+}
+
+.lightning {
+  width: 140px;
+  height: auto;
+  margin-right: -70px;
+  position: relative;
+  top: -40px;
+  left: -15px;
+  z-index: 5;
+  flex-shrink: 0;
+  transform: rotate(-5deg);
+}
+
+.auroraImg {
+  height: 100px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.tagline {
+  font-size: 32px;
+  font-weight: 500;
+  color: #111111;
+  margin: 24px 0 16px;
+}
+
+.subtitle {
+  font-size: 30px;
+  font-weight: 500;
+  color: #333333;
+  margin: 0 0 40px;
+}
+
+.btnRow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.starMobile {
+  display: none;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 60px;
+  background: #FFC211;
+  color: #111111;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  font-family: inherit;
+}
+.btnPrimary:hover {
+  background: #f0b60f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 194, 17, 0.3);
+}
+.btnPrimary:active { transform: translateY(0); }
+
+@media (max-width: 1200px) {
+  .auroraImg { height: 85px; }
+  .lionWrap { width: 450px; top: -80px; }
+  .logoRow { margin-top: 200px; }
+  .decorTopRight { width: 220px; }
+  .decorBottomLeft { width: 260px; }
+}
+
+@media (max-width: 900px) {
+  .auroraImg { height: 85px; }
+  .lionWrap { width: 350px; top: -60px; }
+  .logoRow { margin-top: 150px; }
+  .lightning { width: 100px; margin-right: -20px; top: -15px; }
+  .decorTopLeft { width: 150px; top: 5%; }
+  .decorTopRight { width: 200px; top: 5%; }
+  .decorBottomLeft { width: 200px; }
+  .decorBottomRight { width: 100px; }
+  .tagline { font-size: 26px; }
+  .subtitle { font-size: 24px; }
+  .btnPrimary { padding: 15px 45px; font-size: 16px; }
+}
+
+/* ══════════════════════════════════════════
+   МОБАЙЛ ≤ 600px
+══════════════════════════════════════════ */
+@media (max-width: 600px) {
+
+  .hero {
+    padding: 0;
+    overflow: hidden;
+    align-items: flex-start;
+    min-height: auto;
+  }
+
+  .center {
+    width: 100%;
+    /* Сверху: место под лев (220px) + небольшой зазор */
+    padding: 200px 24px 200px;
+    position: relative;
+  }
+
+  /* ── ЛЕВ: большой, центр сверху, половина уходит вверх ── */
+  .lionWrap {
+    position: absolute;
+    top: -30px;           /* половина льва выходит за верх */
+    left: 50%;
+    transform: translateX(-30%); /* чуть правее т.к. слева стрелки */
+    width: 220px;         /* КРУПНЕЕ */
+    z-index: 10;
+  }
+
+  .decorTopLeft {
+    position: absolute;
+    top: 80px;            /* ниже */
+    left: -30px;
+    width: 170px;         /* крупнее */
+    bottom: auto;
+    right: auto;
+    animation: float 6s ease-in-out infinite;
+  }
+ 
+  .decorTopRight {
+    display: none;
+  }
+
+  /* ── КРУГ: левый край, половина уходит за экран, крупнее ── */
+  .decorBottomLeft {
+    position: absolute;
+    bottom: 40px;
+    left: -50px;          /* половина уходит за край */
+    top: auto;
+    right: auto;
+    width: 160px;         /* КРУПНЕЕ */
+    animation: float 8s ease-in-out infinite 1s;
+  }
+
+  /* ── ТРЕУГОЛЬНИК: правый край, левее и крупнее ── */
+  .decorBottomRight {
+    position: absolute;
+    bottom: 30px;
+    right: 0px;           /* не прячем, просто левее */
+    top: auto;
+    left: 200;
+    width: 130px;         /* КРУПНЕЕ */
+    transform: none;
+    animation: float 5s ease-in-out infinite 1.5s;
+  }
+
+  /* ── ЛОГОТИП: aurora крупнее и ниже ── */
+  .logoRow {
+    margin-top: 0;
+    margin-bottom: 4px;
+    justify-content: flex-start; /* лев справа — лого влево */
+  }
+
+  .lightning {
+    width: 54px;          /* КРУПНЕЕ */
+    height: auto;
+    margin-right: -27px;
+    position: relative;
+    top: -14px;
+    left: -6px;
+    transform: rotate(-5deg);
+    z-index: 5;
+  }
+
+  .auroraImg {
+    height: 50px;         /* КРУПНЕЕ */
+    width: auto;
+  }
+
+  /* ── ТЕКСТЫ ── */
+  .tagline {
+    font-size: 18px;
+    font-weight: 500;
+    color: #111;
+    margin: 12px 0 5px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .subtitle {
+    font-size: 17px;
+    font-weight: 400;
+    color: #444;
+    margin: 0 0 24px;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* ── КНОПКА + ЗВЕЗДА в ряд ── */
+  .btnRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Звезда справа от кнопки: большая, половина уходит за правый край */
+  .starMobile {
+    display: block;
+    width: 150px;         /* БОЛЬШАЯ */
+    height: auto;
+    flex-shrink: 0;
+    margin-right: -200px;  /* половина уходит за правый край экрана */
+    animation: float 7s ease-in-out infinite 0.5s;
+  }
+
+  .btnPrimary {
+    padding: 15px 36px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 100px;
+    flex-shrink: 0;
+  }
+}
